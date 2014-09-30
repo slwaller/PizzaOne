@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
+  devise_for :admins
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
 root 'welcome#index'
 
-resources :company do
-  resources :deal do
+resources :companies do
+  resources :deals do
   end
 end
 

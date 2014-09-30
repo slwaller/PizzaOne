@@ -16,17 +16,17 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.navbar-brand{:href => "#"} PizzaOne
+          %a.navbar-brand{:href => "/"} PizzaOne
         / Collect the nav links, forms, and other content for toggling
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
           %ul.nav.navbar-nav
             %li
-              %a{:href => "#"} Deals
+              %a{:href => "/companies"} Our Restaurants
             %li
               %a{:href => "#"} Services
             %li
               %a{:href => "#"} Contact
-        / /.navbar-collapse
-      / /.container
+          .pull-right
+            = user_login_links
     = yield
     %p.alert= alert

@@ -12,6 +12,7 @@
  *
  *= require bootstrap
  *= require business-frontpage
+ *= require shop-homepage
  *= require_tree .
  *= require_self
  */
