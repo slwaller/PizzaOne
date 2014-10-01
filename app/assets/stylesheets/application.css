@@ -16,3 +16,50 @@
  *= require_tree .
  *= require_self
  */
+input{
+
+  color: #000;
+}
+
+input#user_password{
+  color: black;
+}
+
+input#user_email{
+
+  color: black;
+}
+
+ul
+{
+    list-style-type: none;
+}
+
+.jumbotron {
+color: white;
+background-image: url("/assets/brickform.jpg");
+background-repeat: no-repeat;
+box-shadow: inset 0 0 10px #000000;
+opacity: .8;
+text-align: center;
+margin-right: 200px;
+margin-left: 200px;
+}
+/*
+.jumbotron h1,
+.jumbotron .h1 {
+  color: inherit;
+}
+.jumbotron p {
+  margin-bottom: 15px;
+  font-size: 21px;
+  font-weight: 200;
+}
+.jumbotron > hr {
+  border-top-color: #d5d5d5;
+}
+.container .jumbotron {
+  border-radius: 6px;
+}
+.jumbotron .container {
+  max-width: 100%;*/

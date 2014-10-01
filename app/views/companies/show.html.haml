@@ -2,7 +2,8 @@
   .container
     .row
       .col-md-3
-        %p.lead Shop Name
+        %p.lead
+          = @company.name
         .list-group
           %a.list-group-item{:href => "#"} Category 1
           %a.list-group-item{:href => "#"} Category 2
@@ -17,11 +18,11 @@
                 %li{"data-slide-to" => "2", "data-target" => "#carousel-example-generic"}
               .carousel-inner
                 .item
-                  %img.slide-image{:alt => "", :src => "assets/pizzashow1.jpg"}
+                  %img.slide-image{:alt => "", :src => "/assets/pizzashow1.jpg"}
                 .item.active
-                  %img.slide-image{:alt => "", :src => "assets/pizzashow2.jpg"}
+                  %img.slide-image{:alt => "", :src => "/assets/pizzashow2.jpg"}
                 .item
-                  %img.slide-image{:alt => "", :src => "assets/pizzashow3.jpg"}
+                  %img.slide-image{:alt => "", :src => "/assets/pizzashow3.jpg"}
               %a.left.carousel-control{"data-slide" => "prev", :href => "#carousel-example-generic"}
                 %span.glyphicon.glyphicon-chevron-left
               %a.right.carousel-control{"data-slide" => "next", :href => "#carousel-example-generic"}
@@ -29,15 +30,13 @@
         .row
           .col-sm-4.col-lg-4.col-md-4
             .thumbnail
-              %img{:alt => "", :src => "http://placehold.it/320x150"}/
+              %img{:alt => "", :src => "/assets/pizzaprod1.jpg"}/
               .caption
                 %h4.pull-right $24.99
                 %h4
-                  %a{:href => "#"} First Product
+                  %a{:href => "#"} Pepperoni Pizza
                 %p
-                  See more snippets like this online store item at
-                  = succeed "." do
-                    %a{:href => "http://www.bootsnipp.com", :target => "_blank"} Bootsnipp - http://bootsnipp.com
+                  Your choice of size brick oven pepperoni pizza
               .ratings
                 %p.pull-right 15 reviews
                 %p
@@ -48,12 +47,12 @@
                   %span.glyphicon.glyphicon-star
           .col-sm-4.col-lg-4.col-md-4
             .thumbnail
-              %img{:alt => "", :src => "http://placehold.it/320x150"}/
+              %img{:alt => "", :src => "/assets/pizzaprod2.jpg"}/
               .caption
-                %h4.pull-right $64.99
+                %h4.pull-right $15.99
                 %h4
-                  %a{:href => "#"} Second Product
-                %p This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  %a{:href => "#"} Pizza Rolls
+                %p Rolled pizza dough with your choice of toppings!
               .ratings
                 %p.pull-right 12 reviews
                 %p
@@ -64,12 +63,12 @@
                   %span.glyphicon.glyphicon-star-empty
           .col-sm-4.col-lg-4.col-md-4
             .thumbnail
-              %img{:alt => "", :src => "http://placehold.it/320x150"}/
+              %img{:alt => "", :src => "/assets/pizzaprod3.jpg"}/
               .caption
-                %h4.pull-right $74.99
+                %h4.pull-right $25.99
                 %h4
-                  %a{:href => "#"} Third Product
-                %p This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  %a{:href => "#"} Stuffed Crust
+                %p Your favorite pizzas stuffed with cheese!
               .ratings
                 %p.pull-right 31 reviews
                 %p
@@ -80,14 +79,14 @@
                   %span.glyphicon.glyphicon-star-empty
           .col-sm-4.col-lg-4.col-md-4
             .thumbnail
-              %img{:alt => "", :src => "http://placehold.it/320x150"}/
+              %img{:alt => "", :src => "/assets/pizzaprod4.jpg"}/
               .caption
-                %h4.pull-right $84.99
+                %h4.pull-right $24.99
                 %h4
-                  %a{:href => "#"} Fourth Product
-                %p This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  %a{:href => "#"} Dessert Pizza Deal
+                %p 1 Medium Pizza and 1 Chocolate Chip Pizza
               .ratings
-                %p.pull-right 6 reviews
+                %p.pull-right
                 %p
                   %span.glyphicon.glyphicon-star
                   %span.glyphicon.glyphicon-star
@@ -96,12 +95,12 @@
                   %span.glyphicon.glyphicon-star-empty
           .col-sm-4.col-lg-4.col-md-4
             .thumbnail
-              %img{:alt => "", :src => "http://placehold.it/320x150"}/
+              %img{:alt => "", :src => "/assets/pizzaprod5.jpg"}/
               .caption
-                %h4.pull-right $94.99
+                %h4.pull-right $14.99
                 %h4
-                  %a{:href => "#"} Fifth Product
-                %p This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  %a{:href => "#"} Pizza Muffins
+                %p Dese r da bes.
               .ratings
                 %p.pull-right 18 reviews
                 %p
@@ -112,12 +111,11 @@
                   %span.glyphicon.glyphicon-star-empty
           .col-sm-4.col-lg-4.col-md-4
             %h4
-              %a{:href => "#"} Like this template?
+              %a{:href => "#"} Add New Deal?
             %p
-              If you like this template, then check out
-              %a{:href => "http://maxoffsky.com/code-blog/laravel-shop-tutorial-1-building-a-review-system/", :target => "_blank"} this tutorial
-              on how to build a working review system for your online store!
-            %a.btn.btn-primary{:href => "http://maxoffsky.com/code-blog/laravel-shop-tutorial-1-building-a-review-system/", :target => "_blank"} View Tutorial
+              Admins will see this stuff here
+              
+            = button_to "Add New Deal", new_company_deal_path(@company), class: "a.btn.btn-primary"
   / /.container
   .container
     %hr/

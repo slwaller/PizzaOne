@@ -5,7 +5,7 @@ module ApplicationHelper
         (link_to "Edit", edit_user_registration_path) +
         (link_to "Log Out", destroy_user_session_path, method: :delete)
     else
-      link_to "Log In", new_user_session_path
+      link_to "Log In/Sign Up", new_user_session_path
     end
   end
 end

@@ -1,15 +1,20 @@
-%center  
-  = form_for @company do |f|
-    = f.label :name
-    = f.text_field :name
-    %br
-    = f.label :number
-    = f.text_field :number
-    %br
-    = f.label :email
-    = f.text_field :email
-    %br
-    = f.label :address
-    = f.text_area :address
-    %br
-    = f.submit "Submit", class: "company_submit"
+.jumbotron  
+  %center  
+    = form_for @company do |f|
+      .form-group
+        = f.label :name
+        = f.text_field :name, class: "form-control", placeholder: "Please input the name of your restaurant"
+      %br
+      .form-group
+        = f.label :number
+        = f.text_field :number, class: "form-control", placeholder: "(000)-000-0000"
+      %br
+      .form-group
+        = f.label :email
+        = f.text_field :email, class: "form-control", placeholder: "Your restaurant's email address"
+      %br
+      .form-group
+        = f.label :address
+        = f.text_area :address, class: "form-control", placeholder: "Where are you located?"
+      %br
+      = f.submit "Submit", class: "company_submit"
