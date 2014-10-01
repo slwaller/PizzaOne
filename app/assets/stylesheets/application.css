@@ -13,9 +13,15 @@
  *= require bootstrap
  *= require business-frontpage
  *= require shop-homepage
+ *= require shop-item
  *= require_tree .
  *= require_self
  */
+
+.well {
+  color: black;
+}
+
 input{
 
   color: #000;
@@ -45,21 +51,4 @@ text-align: center;
 margin-right: 200px;
 margin-left: 200px;
 }
-/*
-.jumbotron h1,
-.jumbotron .h1 {
-  color: inherit;
-}
-.jumbotron p {
-  margin-bottom: 15px;
-  font-size: 21px;
-  font-weight: 200;
-}
-.jumbotron > hr {
-  border-top-color: #d5d5d5;
-}
-.container .jumbotron {
-  border-radius: 6px;
-}
-.jumbotron .container {
-  max-width: 100%;*/
+
