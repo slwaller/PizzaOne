@@ -1,21 +1,24 @@
-.jumbotron  
+.jumbotron
   %center
     = form_for [@company, @deal] do |f|
-    - if @deal.errors.any?
-      #error_explanation
-        %h2= "#{pluralize(@deal.errors.count, "error")} prohibited this deal from being saved:"
-        %ul
-          - @deal.errors.full_messages.each do |msg|
-            %li= msg
+      - if @deal.errors.any?
+        #error_explanation
+          %h2= "#{pluralize(@deal.errors.count, "error")} prohibited this deal from being saved:"
+          %ul
+            - @deal.errors.full_messages.each do |msg|
+              %li= msg
 
-    .form-group
-      = f.label :name
-      = f.text_field :name
-    .form-group
-      = f.label :description
-      = f.text_field :description
-    .form-group
-      = f.label :price
-      = f.number_field :price
-    .form-group
-      = f.submit 'Save'
+      .form-group
+        = f.label :avatar
+        = f.file_field :avatar, class: "form-control"
+      .form-group
+        = f.label :name
+        = f.text_field :name, class: "form-control", placeholder: "Please input the name of your menu item"
+      .form-group
+        = f.label :description
+        = f.text_field :description, class: "form-control", placeholder: "Nutrition, Toppings, Size"
+      .form-group
+        = f.label :price
+        = f.number_field :price, class: "form-control", placeholder: "$XX.XX", :step => 0.1
+      .action
+        = f.submit

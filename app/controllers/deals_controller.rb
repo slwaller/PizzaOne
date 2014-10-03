@@ -16,8 +16,8 @@ class DealsController < ApplicationController
   end
 
   def new
-    @deal = Deal.new
     @company = Company.find params[:company_id]
+    @deal = Deal.new
   end
 
   def create
@@ -57,7 +57,7 @@ class DealsController < ApplicationController
   private
 
   def deal_params
-    params.require(:deal).permit(:name, :description, :price)
+    params.require(:deal).permit(:name, :description, :price, :avatar)
   end
 
 end

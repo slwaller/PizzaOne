@@ -38,9 +38,10 @@ ul
 }
 
 .jumbotron {
+background-color: #820400;
+background-image: url(http://www.transparenttextures.com/patterns/brick-wall.png);
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 color: white;
-background-image: url("/assets/brickform.jpg");
-background-repeat: no-repeat;
 box-shadow: inset 0 0 10px #000000;
 opacity: .8;
 text-align: center;
