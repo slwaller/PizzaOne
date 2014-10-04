@@ -1,16 +1,16 @@
-.jumbotron  
-  %center  
-    = button_to "Add your restaurant to our group!", new_company_path, class: "comp_link", method: :get
-    %br 
-    %ul.company_list
-      - @companies.each do |company|
-        %li
-          %strong
-            = link_to company.name, company_path(company)
-          |
-          = company.number
-          |
-          = link_to "Edit", edit_company_path(company)
-          |
-          = link_to "Delete", company_path(company), method: :delete
-    / %ul.company_list  
+
+%center  
+  = button_to "Add your restaurant to our group!", new_company_path, class: "btn btn-lg btn-primary", method: :get
+  %br 
+  %ul.company_list
+    - @companies.each do |company|
+      %li
+        %strong
+          = link_to company.name, company_path(company)
+        |
+        = company.number
+        |
+        = link_to "Edit", edit_company_path(company)
+        |
+        = link_to "Delete", company_path(company), method: :delete
+  / %ul.company_list  

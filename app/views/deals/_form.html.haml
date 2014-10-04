@@ -7,18 +7,21 @@
           %ul
             - @deal.errors.full_messages.each do |msg|
               %li= msg
-
-      .form-group
+      .form-label
         = f.label :avatar
+      .form-group
         = f.file_field :avatar, class: "form-control"
-      .form-group
+      .form-label
         = f.label :name
+      .form-group
         = f.text_field :name, class: "form-control", placeholder: "Please input the name of your menu item"
-      .form-group
+      .form-label
         = f.label :description
-        = f.text_field :description, class: "form-control", placeholder: "Nutrition, Toppings, Size"
       .form-group
+        = f.text_area :description, class: "form-control", placeholder: "Nutrition, Toppings, Size"
+      .form-label
         = f.label :price
+      .form-group
         = f.number_field :price, class: "form-control", placeholder: "$XX.XX", :step => 0.1
       .action
-        = f.submit
+        = f.submit "Submit", class: "btn btn-lg btn-warning"

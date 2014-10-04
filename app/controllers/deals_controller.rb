@@ -25,7 +25,7 @@ class DealsController < ApplicationController
     @deal = @company.deals.new(deal_params)
       respond_to do |format|
         if @deal.save
-          format.html { redirect_to company_deals_path(@company), notice: 'Deal Successfully Added!' }
+          format.html { redirect_to company_path(@company), notice: 'Deal Successfully Added!' }
         else
           format.html { render :new }
         end

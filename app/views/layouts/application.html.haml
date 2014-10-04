@@ -35,9 +35,7 @@
                 %li
                   %a{:href => "#"}= current_user.try(:email)
                 %li
-                  = link_to "Account Settings", edit_user_password_path
-                %li
-                  %a{:href => "#"} Something else here
+                  = link_to "Account Settings", edit_user_registration_path
                 %li.divider
                 %li.dropdown-header Nav header
                 %li
@@ -46,5 +44,11 @@
                   = link_to "Sign In", new_user_session_path
                 %li
                   = link_to "Register", new_user_registration_path
-    = yield
-    %p.alert= alert
+
+  = yield
+.alert
+  %alert= alert
+
+
+
+

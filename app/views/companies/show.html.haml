@@ -10,7 +10,7 @@
           %a.list-group-item{:href => "#"}= @company.address
           %br
           %strong
-            = image_tag "http://maps.google.com/maps/api/staticmap?size=265x250&sensor=false&markers=#{@company.latitude}%2C#{@company.longitude}&}"
+            = image_tag "http://maps.google.com/maps/api/staticmap?size=265x400&sensor=false&markers=#{@company.latitude}%2C#{@company.longitude}&}"
             %br
             %br
             = image_tag "http://maps.googleapis.com/maps/api/streetview?size=265x250&location=#{@company.latitude}%2C#{@company.longitude}&}"
@@ -33,95 +33,30 @@
                 %span.glyphicon.glyphicon-chevron-left
               %a.right.carousel-control{"data-slide" => "next", :href => "#carousel-example-generic"}
                 %span.glyphicon.glyphicon-chevron-right
-        .row
-          .col-sm-4.col-lg-4.col-md-4
-            .thumbnail
-              %img{:alt => "", :src => "/assets/pizzaprod1.jpg"}/
-              .caption
-                %h4.pull-right $24.99
-                %h4
-                  %a{:href => "/companies/1/deals/1"} Pepperoni Pizza
-                %p
-                  Your choice of size brick oven pepperoni pizza
-              .ratings
-                %p.pull-right 15 reviews
-                %p
-                  %span.glyphicon.glyphicon-star
-                  %span.glyphicon.glyphicon-star
-                  %span.glyphicon.glyphicon-star
-                  %span.glyphicon.glyphicon-star
-                  %span.glyphicon.glyphicon-star
-          .col-sm-4.col-lg-4.col-md-4
-            .thumbnail
-              %img{:alt => "", :src => "/assets/pizzaprod2.jpg"}/
-              .caption
-                %h4.pull-right $15.99
-                %h4
-                  %a{:href => "#"} Pizza Rolls
-                %p Rolled pizza dough with your choice of toppings!
-              .ratings
-                %p.pull-right 12 reviews
-                %p
-                  %span.glyphicon.glyphicon-star
-                  %span.glyphicon.glyphicon-star
-                  %span.glyphicon.glyphicon-star
-                  %span.glyphicon.glyphicon-star
-                  %span.glyphicon.glyphicon-star-empty
-          .col-sm-4.col-lg-4.col-md-4
-            .thumbnail
-              %img{:alt => "", :src => "/assets/pizzaprod3.jpg"}/
-              .caption
-                %h4.pull-right $25.99
-                %h4
-                  %a{:href => "#"} Stuffed Crust
-                %p Your favorite pizzas stuffed with cheese!
-              .ratings
-                %p.pull-right 31 reviews
-                %p
-                  %span.glyphicon.glyphicon-star
-                  %span.glyphicon.glyphicon-star
-                  %span.glyphicon.glyphicon-star
-                  %span.glyphicon.glyphicon-star
-                  %span.glyphicon.glyphicon-star-empty
-          .col-sm-4.col-lg-4.col-md-4
-            .thumbnail
-              %img{:alt => "", :src => "/assets/pizzaprod4.jpg"}/
-              .caption
-                %h4.pull-right $24.99
-                %h4
-                  %a{:href => "#"} Dessert Pizza Deal
-                %p 1 Medium Pizza and 1 Chocolate Chip Pizza
-              .ratings
-                %p.pull-right
-                %p
-                  %span.glyphicon.glyphicon-star
-                  %span.glyphicon.glyphicon-star
-                  %span.glyphicon.glyphicon-star
-                  %span.glyphicon.glyphicon-star-empty
-                  %span.glyphicon.glyphicon-star-empty
-          .col-sm-4.col-lg-4.col-md-4
-            .thumbnail
-              %img{:alt => "", :src => "/assets/pizzaprod5.jpg"}/
-              .caption
-                %h4.pull-right $14.99
-                %h4
-                  %a{:href => "#"} Pizza Muffins
-                %p Dese r da bes.
-              .ratings
-                %p.pull-right 18 reviews
-                %p
-                  %span.glyphicon.glyphicon-star
-                  %span.glyphicon.glyphicon-star
-                  %span.glyphicon.glyphicon-star
-                  %span.glyphicon.glyphicon-star
-                  %span.glyphicon.glyphicon-star-empty
-          .col-sm-4.col-lg-4.col-md-4
-            %h4
-              %a{:href => "#"} Add New Deal?
-            %p
-              Admins will see this stuff here
-              
-            = button_to "Add New Deal", new_company_deal_path(@company), class: "a.btn.btn-primary", method: :get
+                .row
+          / .col-sm-4.col-lg-4.col-md-4
+          /   .thumbnail
+          /     %img{:alt => "", :src => "/assets/pizzaprod1.jpg"} deal.avatar/
+          /     .caption
+          /       %h4.pull-right $24.99 deal.price
+          /       %h4
+          /         %a{:href => "/companies/1/deals/1"} Pepperoni Pizza deal.name => deal#show
+          /       %p
+          /         Your choice of size brick oven pepperoni pizza deal.description
+
+        - @company.deals.each do |deal|
+          = deal.avatar
+          = deal.price
+          = link_to deal.name
+          = deal.description
+
+      .col-sm-4.col-lg-4.col-md-4
+        %h4
+          %a{:href => "#"} Add New Deal?
+        %p
+          Admins will see this stuff here
+          
+        = button_to "Add New Deal", new_company_deal_path(@company), class: "btn btn-warning", method: :get
   / /.container
   .container
     %hr/

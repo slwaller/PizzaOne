@@ -16,8 +16,10 @@ class CompaniesController < ApplicationController
   def create
     @company = Company.new company_params
     if @company.save
+      gflash :success => "Your restaurant has been added successfully!"
       redirect_to companies_path
     else
+      gflash :now, :error => "Something went wrong."
       render :new
     end
   end

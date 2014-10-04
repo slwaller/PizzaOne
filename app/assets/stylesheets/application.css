@@ -14,12 +14,44 @@
  *= require business-frontpage
  *= require shop-homepage
  *= require shop-item
+ *= require gritter
  *= require_tree .
  *= require_self
  */
 
-input{
 
+.form-label{
+  margin-right: 200px;
+  margin-left: 200px;
+  background-color: #FFFF4D;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  box-shadow:         10px 10px 1px 1px #2A2A2A;
+  color: black;
+  text-align: center;
+  font-weight: bold;
+  font-family: sans-serif;
+  background: #fefcea;
+  background: -moz-linear-gradient(top,  #fefcea 0%, #f1da36 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fefcea), color-stop(100%,#f1da36));
+  background: -webkit-linear-gradient(top,  #fefcea 0%,#f1da36 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #fefcea 0%,#f1da36 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #fefcea 0%,#f1da36 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #fefcea 0%,#f1da36 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', endColorstr='#f1da36',GradientType=0 ); /* IE6-9 */
+
+}
+.form-group{
+  margin-right: 200px;
+  margin-left: 200px;
+  color: black;
+  box-shadow:         10px 10px 1px 1px #2A2A2A;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px; 
+}
+input{
   color: #000;
 }
 
@@ -28,7 +60,6 @@ input#user_password{
 }
 
 input#user_email{
-
   color: black;
 }
 
@@ -38,12 +69,7 @@ ul
 }
 
 .jumbotron {
-background-color: #820400;
-background-image: url(http://www.transparenttextures.com/patterns/brick-wall.png);
-/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
-color: white;
-box-shadow: inset 0 0 10px #000000;
-opacity: .8;
+background-color: inherit;
 text-align: center;
 margin-right: 200px;
 margin-left: 200px;

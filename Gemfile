@@ -31,6 +31,7 @@ gem 'quiet_assets'
 gem 'devise'
 gem 'geocoder'
 gem "paperclip", "~> 4.2"
+gem "gritter", "1.1.0"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

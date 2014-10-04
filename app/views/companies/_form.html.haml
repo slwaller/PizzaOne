@@ -1,20 +1,21 @@
 .jumbotron  
   %center  
     = form_for @company do |f|
-      .form-group
-        = f.label :name
-        = f.text_field :name, class: "form-control", placeholder: "Please input the name of your restaurant"
       %br
-      .form-group
-        = f.label :number
-        = f.text_field :number, class: "form-control", placeholder: "(000)-000-0000"
-      %br
-      .form-group
-        = f.label :email
-        = f.text_field :email, class: "form-control", placeholder: "Your restaurant's email address"
-      %br
-      .form-group
-        = f.label :address
-        = f.text_area :address, class: "form-control", placeholder: "Where are you located?"
-      %br
-      = f.submit "Submit", class: "company_submit"
+        .form-label
+          = f.label :name
+        .form-group
+          = f.text_field :name, class: "form-control", placeholder: "Please input the name of your restaurant"
+        .form-label
+          = f.label :number
+        .form-group
+          = f.text_field :number, class: "form-control", placeholder: "(000)-000-0000"
+        .form-label
+          = f.label :email
+        .form-group 
+          = f.text_field :email, class: "form-control", placeholder: "Your restaurant's email address"
+        .form-label
+          = f.label :address
+        .form-group
+          = f.text_area :address, class: "form-control", placeholder: "Where are you located?"
+        = f.submit "Submit", class: "btn btn-lg btn-warning"
