@@ -1,63 +1,28 @@
 .container
-  / Jumbotron Header
-  %header.jumbotron.hero-spacer
-    %h1 A Warm Welcome!
-    %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.
+  %header.jumbotron
     %p
-      %a.btn.btn-primary.btn-large Call to action!
+      %a.btn.btn-primary.btn-large Search Gonna B here!
   %hr/
-  / Title
   .row
     .col-lg-12
-      %h3 Latest Features
-  / /.row
-  / Page Features
-  .row.text-center
-    .col-md-3.col-sm-6.hero-feature
-      .thumbnail
-        %img{:alt => "", :src => "http://placehold.it/800x500"}/
-        .caption
-          %h3 Feature Label
-          %p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          %p
-            %a.btn.btn-primary{:href => "#"} Buy Now!
-            %a.btn.btn-default{:href => "#"} More Info
-    .col-md-3.col-sm-6.hero-feature
-      .thumbnail
-        %img{:alt => "", :src => "http://placehold.it/800x500"}/
-        .caption
-          %h3 Feature Label
-          %p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          %p
-            %a.btn.btn-primary{:href => "#"} Buy Now!
-            %a.btn.btn-default{:href => "#"} More Info
-    .col-md-3.col-sm-6.hero-feature
-      .thumbnail
-        %img{:alt => "", :src => "http://placehold.it/800x500"}/
-        .caption
-          %h3 Feature Label
-          %p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          %p
-            %a.btn.btn-primary{:href => "#"} Buy Now!
-            %a.btn.btn-default{:href => "#"} More Info
-    .col-md-3.col-sm-6.hero-feature
-      .thumbnail
-        %img{:alt => "", :src => "http://placehold.it/800x500"}/
-        .caption
-          %h3 Feature Label
-          %p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          %p
-            %a.btn.btn-primary{:href => "#"} Buy Now!
-            %a.btn.btn-default{:href => "#"} More Info
-  / /.row
+      %h3 Our Providers
+      - @companies.each do |company|
+        .col-md-3.col-sm-6.hero-feature
+          .row.text-center
+            .thumbnail
+              = image_tag company.avatar.url
+              .caption
+                %h3
+                  = link_to company.name, company_path(company)
+                %a.btn.btn-primary
+                  = company.number
+%center  
+  = button_to "Add your restaurant to our group!", new_company_path, class: "btn btn-lg btn-primary", method: :get
+  %br 
+
   %hr/
   / Footer
   %footer
     .row
       .col-lg-12
         %p Copyright © Your Website 2014
-/ /.container
-/ jQuery Version 1.11.0
-%script{:src => "js/jquery-1.11.0.js"}
-/ Bootstrap Core JavaScript
-%script{:src => "js/bootstrap.min.js"}

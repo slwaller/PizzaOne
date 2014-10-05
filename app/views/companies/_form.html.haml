@@ -3,6 +3,10 @@
     = form_for @company do |f|
       %br
         .form-label
+          = f.label :avatar
+        .form-group
+          = f.file_field :avatar, class: "form-control"
+        .form-label
           = f.label :name
         .form-group
           = f.text_field :name, class: "form-control", placeholder: "Please input the name of your restaurant"

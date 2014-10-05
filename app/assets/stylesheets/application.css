@@ -18,7 +18,22 @@
  *= require gritter
  *= require_tree .
  *= require_self
- */
+ */ 
+.col-md-3.col-sm-6.hero-feature{
+
+  padding: 30px;
+}
+.caption{
+background: #f2f5f6;
+background: -moz-linear-gradient(top,  #f2f5f6 0%, #e3eaed 37%, #c8d7dc 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f2f5f6), color-stop(37%,#e3eaed), color-stop(100%,#c8d7dc));
+background: -webkit-linear-gradient(top,  #f2f5f6 0%,#e3eaed 37%,#c8d7dc 100%);
+background: -o-linear-gradient(top,  #f2f5f6 0%,#e3eaed 37%,#c8d7dc 100%);
+background: -ms-linear-gradient(top,  #f2f5f6 0%,#e3eaed 37%,#c8d7dc 100%);
+background: linear-gradient(to bottom,  #f2f5f6 0%,#e3eaed 37%,#c8d7dc 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f5f6', endColorstr='#c8d7dc',GradientType=0 );
+
+}
 
 .list-group-item{
 background: #e2e2e2;
@@ -136,9 +151,8 @@ ul
 }
 
 .jumbotron {
-background-color: inherit;
-text-align: center;
-margin-right: 200px;
-margin-left: 200px;
+  background-color: inherit;
+  text-align: center;
+  margin-right: 200px;
+  margin-left: 200px;
 }
-
