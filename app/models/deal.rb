@@ -1,5 +1,6 @@
 class Deal < ActiveRecord::Base
   belongs_to :company
+  has_many :comments, as: :commentable
 
   validates :name, presence: true
   validates :description, presence: true

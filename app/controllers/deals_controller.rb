@@ -13,6 +13,7 @@ class DealsController < ApplicationController
   def show
     @company = Company.find params[:company_id]
     @deal = Deal.find params[:id]
+    @comment = @deal.comments.new
   end
 
   def new
@@ -54,10 +55,30 @@ class DealsController < ApplicationController
     redirect_to companys_path
   end
 
+  def create_comment
+    @company = Company.find params[:company_id]
+    @deal = @company.deals.find params[:id]
+    @comment = @deal.comments.create comment_params
+    redirect_to company_deal_path(@company, @deal)
+  end
+
+  def delete_comment
+    p params
+    @company = Company.find params[:company_id]
+    @deal = @company.deals.find params[:id]
+    @comment = @deal.comments.find params[:comment_id]
+    @comment.delete
+    redirect_to company_deal_path(@company, @deal)
+  end
+
   private
 
   def deal_params
     params.require(:deal).permit(:name, :description, :price, :avatar)
+  end
+
+  def comment_params
+    params.require(:comment).permit(:content)
   end
 
 end

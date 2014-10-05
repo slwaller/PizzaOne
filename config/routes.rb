@@ -8,6 +8,10 @@ root 'welcome#index'
 
 resources :companies do
   resources :deals do
+    member do
+      post :create_comment
+      delete :delete_comment
+    end
   end
 end
 

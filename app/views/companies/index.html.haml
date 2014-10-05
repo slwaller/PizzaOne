@@ -1,16 +1,63 @@
-
-%center  
-  = button_to "Add your restaurant to our group!", new_company_path, class: "btn btn-lg btn-primary", method: :get
-  %br 
-  %ul.company_list
-    - @companies.each do |company|
-      %li
-        %strong
-          = link_to company.name, company_path(company)
-        |
-        = company.number
-        |
-        = link_to "Edit", edit_company_path(company)
-        |
-        = link_to "Delete", company_path(company), method: :delete
-  / %ul.company_list  
+.container
+  / Jumbotron Header
+  %header.jumbotron.hero-spacer
+    %h1 A Warm Welcome!
+    %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.
+    %p
+      %a.btn.btn-primary.btn-large Call to action!
+  %hr/
+  / Title
+  .row
+    .col-lg-12
+      %h3 Latest Features
+  / /.row
+  / Page Features
+  .row.text-center
+    .col-md-3.col-sm-6.hero-feature
+      .thumbnail
+        %img{:alt => "", :src => "http://placehold.it/800x500"}/
+        .caption
+          %h3 Feature Label
+          %p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          %p
+            %a.btn.btn-primary{:href => "#"} Buy Now!
+            %a.btn.btn-default{:href => "#"} More Info
+    .col-md-3.col-sm-6.hero-feature
+      .thumbnail
+        %img{:alt => "", :src => "http://placehold.it/800x500"}/
+        .caption
+          %h3 Feature Label
+          %p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          %p
+            %a.btn.btn-primary{:href => "#"} Buy Now!
+            %a.btn.btn-default{:href => "#"} More Info
+    .col-md-3.col-sm-6.hero-feature
+      .thumbnail
+        %img{:alt => "", :src => "http://placehold.it/800x500"}/
+        .caption
+          %h3 Feature Label
+          %p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          %p
+            %a.btn.btn-primary{:href => "#"} Buy Now!
+            %a.btn.btn-default{:href => "#"} More Info
+    .col-md-3.col-sm-6.hero-feature
+      .thumbnail
+        %img{:alt => "", :src => "http://placehold.it/800x500"}/
+        .caption
+          %h3 Feature Label
+          %p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          %p
+            %a.btn.btn-primary{:href => "#"} Buy Now!
+            %a.btn.btn-default{:href => "#"} More Info
+  / /.row
+  %hr/
+  / Footer
+  %footer
+    .row
+      .col-lg-12
+        %p Copyright © Your Website 2014
+/ /.container
+/ jQuery Version 1.11.0
+%script{:src => "js/jquery-1.11.0.js"}
+/ Bootstrap Core JavaScript
+%script{:src => "js/bootstrap.min.js"}

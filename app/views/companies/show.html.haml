@@ -6,7 +6,10 @@
           = @company.name
         .list-group
           %a.list-group-item{:href => "#"}= @company.number
-          %a.list-group-item{:href => "mailto:#{@company.email}"}= @company.email
+
+          %a.list-group-item{:href => "mailto:#{@company.email}"}
+            .glyphicon.glyphicon-envelope
+              = @company.email
           %a.list-group-item{:href => "#"}= @company.address
           %br
           %strong
@@ -44,11 +47,17 @@
           /       %p
           /         Your choice of size brick oven pepperoni pizza deal.description
 
-        - @company.deals.each do |deal|
-          = deal.avatar
-          = deal.price
-          = link_to deal.name
-          = deal.description
+      - @company.deals.each do |deal|
+        .col-sm-4.col-lg-4.col-md-4
+          .thumbnail
+            =image_tag(deal.avatar)
+            .caption
+              %h4.pull-right
+                ="$#{deal.price}"
+              %h4
+                = link_to deal.name, company_deal_path(@company, deal)
+              %p
+                = deal.description
 
       .col-sm-4.col-lg-4.col-md-4
         %h4
@@ -57,7 +66,6 @@
           Admins will see this stuff here
           
         = button_to "Add New Deal", new_company_deal_path(@company), class: "btn btn-warning", method: :get
-  / /.container
   .container
     %hr/
     / Footer
