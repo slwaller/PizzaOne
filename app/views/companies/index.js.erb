@@ -1,0 +1,3 @@
+<% @companies.each do |company| %>
+  $("ul.companies").append("<%= escape_javascript(render('companies/company_partial', company: company )) %>")
+<% end %>

@@ -1,7 +1,9 @@
 .container
   %header.jumbotron
     %p
-      %a.btn.btn-primary.btn-large Search Gonna B here!
+      = text_field_tag '', '', class: "company_search"
+      = link_to "Search Restaurants", 'javascript:void(0);', class: "search_companies btn btn-lg btn-primary"
+      %ul.search_list
   %hr/
   .row
     .col-lg-12
@@ -18,8 +20,6 @@
                   = company.number
 %center  
   = button_to "Add your restaurant to our group!", new_company_path, class: "btn btn-lg btn-primary", method: :get
-  %br 
-
   %hr/
   / Footer
   %footer

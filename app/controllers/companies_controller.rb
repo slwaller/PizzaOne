@@ -1,6 +1,13 @@
 class CompaniesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
 
+  def search_companies
+    @companies = Company.where("name LIKE ?", "%#{params[:q]}%")
+    respond_to do |format|
+      format.js
+    end
+  end
+
   def index
     @companies = Company.all
   end
