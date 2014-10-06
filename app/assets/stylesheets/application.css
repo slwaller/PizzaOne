@@ -18,11 +18,13 @@
  *= require gritter
  *= require_tree .
  *= require_self
- */ 
-.col-md-3.col-sm-6.hero-feature{
+ */
 
+
+.col-md-3.col-sm-6.hero-feature{
   padding: 30px;
 }
+
 .caption{
 background: #f2f5f6;
 background: -moz-linear-gradient(top,  #f2f5f6 0%, #e3eaed 37%, #c8d7dc 100%);
@@ -156,3 +158,4 @@ ul
   margin-right: 200px;
   margin-left: 200px;
 }
+

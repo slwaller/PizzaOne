@@ -37,20 +37,11 @@
               %a.right.carousel-control{"data-slide" => "next", :href => "#carousel-example-generic"}
                 %span.glyphicon.glyphicon-chevron-right
                 .row
-          / .col-sm-4.col-lg-4.col-md-4
-          /   .thumbnail
-          /     %img{:alt => "", :src => "/assets/pizzaprod1.jpg"} deal.avatar/
-          /     .caption
-          /       %h4.pull-right $24.99 deal.price
-          /       %h4
-          /         %a{:href => "/companies/1/deals/1"} Pepperoni Pizza deal.name => deal#show
-          /       %p
-          /         Your choice of size brick oven pepperoni pizza deal.description
 
       - @company.deals.each do |deal|
         .col-sm-4.col-lg-4.col-md-4
           .thumbnail
-            = image_tag deal.avatar.url
+            = image_tag deal.avatar.url, class: "img-show"
             .caption
               %h4.pull-right
                 ="$#{deal.price}"

@@ -1,4 +1,3 @@
-$("ul.search_list").html("")
-<% @companies.each do |company| %>
-  $("ul.search_list").append("<%= escape_javascript(render('companies/company_partial', company: company )) %>")
-<% end %>
+$(".search_list").html("")
+  $(".search_list").append("<%= escape_javascript(render('companies/company_partial', companies: @companies )) %>")
+

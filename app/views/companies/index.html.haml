@@ -3,7 +3,8 @@
     %p
       = text_field_tag '', '', class: "company_search"
       = link_to "Search Restaurants", 'javascript:void(0);', class: "search_companies btn btn-lg btn-primary"
-      %ul.search_list
+  .row.search_list
+
   %hr/
   .row
     .col-lg-12
@@ -12,7 +13,7 @@
         .col-md-3.col-sm-6.hero-feature
           .row.text-center
             .thumbnail
-              = image_tag company.avatar.url
+              = image_tag company.avatar.url, class: "img-logo"
               .caption
                 %h3
                   = link_to company.name, company_path(company)

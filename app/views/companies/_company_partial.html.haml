@@ -1,6 +1,10 @@
-%li
-  = company.name
-  |
-  = company.address
-  |
-  = company.number
+- companies.each do |company|
+  .col-md-3.col-sm-6.hero-feature
+    .row.text-center
+      .thumbnail
+        = image_tag company.avatar.url, class: "img-logo"
+        .caption
+          %h3
+            = link_to company.name, company_path(company)
+          %a.btn.btn-primary
+            = company.number
