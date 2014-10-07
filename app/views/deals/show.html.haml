@@ -5,8 +5,10 @@
         %p.lead
           = image_tag @deal.avatar.url, class: "img-show"
           %br
-          = link_to "Edit This Menu Item", edit_company_deal_path(@company, @deal), class: "btn btn-warning btn-xs"
-          = link_to "Delete This Menu Item", company_deal_path(@company, @deal), class: "btn btn-danger btn-xs", method: :delete
+          - if can? :create, Deal
+            = link_to "Edit This Menu Item", edit_company_deal_path(@company, @deal), class: "btn btn-warning btn-xs"
+          - if can? :destroy, Deal
+            = link_to "Delete This Menu Item", company_deal_path(@company, @deal), class: "btn btn-danger btn-xs", method: :delete
           %br  
         .list-group
           %a.list-group-item.active{:href => "#"}=@company.name

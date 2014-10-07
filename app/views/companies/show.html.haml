@@ -5,8 +5,10 @@
         %p.lead
           = image_tag @company.avatar.url, class: "img-logo"
         %center
-          = link_to "Edit Restaurant", edit_company_path(@company), class: "btn btn-warning btn-xs"
-          = link_to "Delete Restaurant", company_path(@company), class: "btn btn-danger btn-xs"
+          - if can? :update, Company
+            = link_to "Edit Restaurant", edit_company_path(@company), class: "btn btn-warning btn-xs"
+          - if can? :destroy, Company
+            = link_to "Delete Restaurant", company_path(@company), class: "btn btn-danger btn-xs"
           %br
           %br
         .list-group
@@ -63,6 +65,7 @@
           .caption
             %h4
               %center
+              - if can? :create, Deal  
                 = button_to "Add New Deal", new_company_deal_path(@company), class: "btn btn-warning", method: :get
   .container
     %hr/

@@ -20,7 +20,7 @@
                 %a.btn.btn-primary
                   = company.number
 %center
-  - if can? :create, @company
+  - if can? :create, Company
     = button_to "Add your restaurant to our group!", new_company_path, class: "btn btn-lg btn-primary", method: :get
   %hr/
   / Footer
