@@ -7,8 +7,8 @@ class Ability
       can :manage, Company, :user_id => user.id
       can :manage, Deal, :user_id => user.id
     else
-      can :read, Company, :user_id => user.id
-      can :read, Deal, :user_id => user.id
+      can :read, Company
+      can :read, Deal
     end
 
     # Define abilities for the passed in user here. For example:

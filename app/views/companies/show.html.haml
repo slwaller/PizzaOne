@@ -65,8 +65,8 @@
           .caption
             %h4
               %center
-              - if can? :create, @deal  
-                = button_to "Add New Deal", new_company_deal_path(@company), class: "btn btn-warning", method: :get
+                - if can? :update, @company  
+                  = button_to "Add New Deal", new_company_deal_path(@company), class: "btn btn-warning", method: :get
   .container
     %hr/
     / Footer
