@@ -20,7 +20,6 @@ module PizzaOne
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
     config.assets.paths << "#{Rails.root}/vendor/assets/fonts"
-    config.assets.paths << "#{Rails.root}/vendor/assets/images"
     config.assets.initialize_on_precompile = false
     config.serve_static_assets = true
     config.assets.compile = true
