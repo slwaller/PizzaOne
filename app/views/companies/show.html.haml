@@ -3,7 +3,12 @@
     .row
       .col-md-3
         %p.lead
-          = @company.name
+          = image_tag @company.avatar.url, class: "img-logo"
+        %center
+          = link_to "Edit Restaurant", edit_company_path(@company), class: "btn btn-warning btn-xs"
+          = link_to "Delete Restaurant", company_path(@company), class: "btn btn-danger btn-xs"
+          %br
+          %br
         .list-group
           %a.list-group-item{:href => "#"}= @company.number
 
@@ -12,11 +17,13 @@
               = @company.email
           %a.list-group-item{:href => "#"}= @company.address
           %br
+          %br
           %strong
             = image_tag "http://maps.google.com/maps/api/staticmap?size=265x400&sensor=false&markers=#{@company.latitude}%2C#{@company.longitude}&}"
             %br
             %br
             = image_tag "http://maps.googleapis.com/maps/api/streetview?size=265x250&location=#{@company.latitude}%2C#{@company.longitude}&}"
+            %br
       .col-md-9
         .row.carousel-holder
           .col-md-12
@@ -51,12 +58,12 @@
                 = deal.description
 
       .col-sm-4.col-lg-4.col-md-4
-        %h4
-          %a{:href => "#"} Add New Deal?
-        %p
-          Admins will see this stuff here
-          
-        = button_to "Add New Deal", new_company_deal_path(@company), class: "btn btn-warning", method: :get
+        .thumbnail
+          = image_tag @company.avatar.url, class: "img-show"
+          .caption
+            %h4
+              %center
+                = button_to "Add New Deal", new_company_deal_path(@company), class: "btn btn-warning", method: :get
   .container
     %hr/
     / Footer

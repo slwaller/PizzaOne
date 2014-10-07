@@ -1,5 +1,6 @@
 class DealsController < ApplicationController
   before_action :authenticate_user!
+  load_and_authorize_resource :only =>[:new, :create, :edit, :update, :destroy]
 
   def index
     @deals = Deal.all
@@ -42,7 +43,7 @@ class DealsController < ApplicationController
     @company = Company.find params[:company_id]
     @deal = Deal.find params[:id]
     if @deal.update_attributes deal_params
-      redirect_to companys_path  
+      redirect_to companies_path  
     else
       render :edit
     end
@@ -52,7 +53,7 @@ class DealsController < ApplicationController
     @company = Company.find params[:company_id]
     @deal = Deal.find params[:id]
     @deal.delete
-    redirect_to companys_path
+    redirect_to companies_path
   end
 
   def create_comment

@@ -1,5 +1,6 @@
 class CompaniesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
+  load_and_authorize_resource :only =>[:new, :create, :edit, :update, :destroy]
 
   def search_companies
     @companies = Company.where("name LIKE ?", "%#{params[:q]}%")
@@ -38,7 +39,7 @@ class CompaniesController < ApplicationController
   def update
     @company = Company.find params[:id]
     @company.update_attributes company_params
-    redirect_to companies_path
+    redirect_to company_path(@company)
   end
 
   def destroy

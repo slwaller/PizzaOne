@@ -2,7 +2,7 @@
   %header.jumbotron
     %p
       = text_field_tag '', '', class: "company_search"
-      = link_to "Search Restaurants", 'javascript:void(0);', class: "search_companies btn btn-lg btn-primary"
+      = link_to "Search Restaurants", 'javascript:void(0);', class: "search_companies btn btn-primary"
   .row.search_list
 
   %hr/
@@ -19,8 +19,9 @@
                   = link_to company.name, company_path(company)
                 %a.btn.btn-primary
                   = company.number
-%center  
-  = button_to "Add your restaurant to our group!", new_company_path, class: "btn btn-lg btn-primary", method: :get
+%center
+  - if can? :create, @company
+    = button_to "Add your restaurant to our group!", new_company_path, class: "btn btn-lg btn-primary", method: :get
   %hr/
   / Footer
   %footer

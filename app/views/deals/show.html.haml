@@ -3,17 +3,23 @@
     .row
       .col-md-3
         %p.lead
-          = @deal.name
+          = image_tag @deal.avatar.url, class: "img-show"
+          %br
+          = link_to "Edit This Menu Item", edit_company_deal_path(@company, @deal), class: "btn btn-warning btn-xs"
+          = link_to "Delete This Menu Item", company_deal_path(@company, @deal), class: "btn btn-danger btn-xs", method: :delete
+          %br  
         .list-group
           %a.list-group-item.active{:href => "#"}=@company.name
           %a.list-group-item{:href => "#"}= @company.number
           %a.list-group-item{:href => "#"}= @company.address
-          %br
           %strong
             = image_tag "http://maps.google.com/maps/api/staticmap?size=265x400&sensor=false&markers=#{@company.latitude}%2C#{@company.longitude}&}"
             %br
             %br
             = image_tag "http://maps.googleapis.com/maps/api/streetview?size=265x250&location=#{@company.latitude}%2C#{@company.longitude}&}"
+            %br
+            %br
+
       .col-md-9
         .thumbnail
           %img.img-responsive{:alt => "", :src => "/assets/showheader.jpg"}/
