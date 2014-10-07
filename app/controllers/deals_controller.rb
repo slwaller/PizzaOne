@@ -24,7 +24,7 @@ class DealsController < ApplicationController
 
   def create
     @company = Company.find params[:company_id]
-    @deal = @company.deals.new(deal_params)
+    @deal = @company.deals.new deal_params.merge(user_id: current_user.id)
       respond_to do |format|
         if @deal.save
           format.html { redirect_to company_path(@company), notice: 'Deal Successfully Added!' }
@@ -43,7 +43,7 @@ class DealsController < ApplicationController
     @company = Company.find params[:company_id]
     @deal = Deal.find params[:id]
     if @deal.update_attributes deal_params
-      redirect_to companies_path  
+      redirect_to company_deal_path(@company, @deal) 
     else
       render :edit
     end

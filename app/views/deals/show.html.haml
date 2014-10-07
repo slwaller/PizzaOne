@@ -14,6 +14,7 @@
           %a.list-group-item.active{:href => "#"}=@company.name
           %a.list-group-item{:href => "#"}= @company.number
           %a.list-group-item{:href => "#"}= @company.address
+          %br
           %strong
             = image_tag "http://maps.google.com/maps/api/staticmap?size=265x400&sensor=false&markers=#{@company.latitude}%2C#{@company.longitude}&}"
             %br
