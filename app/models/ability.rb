@@ -5,7 +5,7 @@ class Ability
     user ||= User.new
     if user.admin?
       can :manage, Company, :user_id => user.id
-      can :manage, Deal, :user_id => user.id
+      can :manage, Deal
     else
       can :read, Company
       can :read, Deal
