@@ -20,6 +20,11 @@
  *= require_self
  */
 
+.alert{
+  font-size: 34px;
+  font-weight: bold;
+}
+
 .form-label{
   margin-right: 200px;
   margin-left: 200px;

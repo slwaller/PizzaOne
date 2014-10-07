@@ -22,7 +22,7 @@ class CompaniesController < ApplicationController
   end
 
   def create
-    @company = Company.new company_params
+    @company = Company.new company_params.merge(user_id: current_user.id)
     if @company.save
       gflash :success => "Your restaurant has been added successfully!"
       redirect_to companies_path
