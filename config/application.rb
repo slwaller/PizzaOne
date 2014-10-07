@@ -23,5 +23,6 @@ module PizzaOne
     config.assets.paths << "#{Rails.root}/vendor/assets/images"
     config.assets.initialize_on_precompile = true
     config.serve_static_assets = true
+    config.assets.compile = true
   end
 end
