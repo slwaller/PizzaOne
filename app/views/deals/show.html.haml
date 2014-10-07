@@ -19,7 +19,7 @@
           %img.img-responsive{:alt => "", :src => "/assets/showheader.jpg"}/
           .caption-full
             %h4.pull-right
-              ="$#{@deal.price}"
+              =to_money(@deal.price)
             %h4
               =@deal.name
             %p 

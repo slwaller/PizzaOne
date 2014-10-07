@@ -8,4 +8,8 @@ module ApplicationHelper
       link_to "Log In/Sign Up", new_user_session_path
     end
   end
+
+  def to_money(number)
+    sprintf("$%0.02f", number)
+  end
 end

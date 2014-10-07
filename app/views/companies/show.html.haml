@@ -44,7 +44,7 @@
             = image_tag deal.avatar.url, class: "img-show"
             .caption
               %h4.pull-right
-                ="$#{deal.price}"
+                =to_money(deal.price)
               %h4
                 = link_to deal.name, company_deal_path(@company, deal)
               %p
