@@ -5,9 +5,9 @@
         %p.lead
           = image_tag @company.avatar.url, class: "img-logo"
         %center
-          - if can? :update, Company
+          - if can? :update, @company
             = link_to "Edit Restaurant", edit_company_path(@company), class: "btn btn-warning btn-xs"
-          - if can? :destroy, Company
+          - if can? :destroy, @company
             = link_to "Delete Restaurant", company_path(@company), class: "btn btn-danger btn-xs"
           %br
           %br

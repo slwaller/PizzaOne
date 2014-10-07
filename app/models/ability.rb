@@ -2,6 +2,7 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
+    user ||= User.new
     if user.admin?
       can :manage, Company, :user_id => user.id
       can :manage, Deal, :user_id => user.id
