@@ -51,8 +51,8 @@ group :production do
   gem 'pg'
 end
 
-
-
+gem "paperclip-dropbox", ">= 1.1.7"
+gem "figaro"
 
 
 
