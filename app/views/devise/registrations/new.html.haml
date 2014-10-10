@@ -11,8 +11,9 @@
       %div
         .form-label
           = f.label :admin, "Sell Through Us?"
-          = f.check_box :admin, class: "form-control"
+          = f.check_box :admin
       %div
+      %br
         .form-label
           = f.label :password
           - if @validatable
@@ -21,7 +22,6 @@
         .form-group
           = f.password_field :password, autocomplete: "off", class: "form-control"
       %div
-      %br
         .form-label
           = f.label :password_confirmation
         .form-group

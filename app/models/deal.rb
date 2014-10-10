@@ -7,7 +7,7 @@ class Deal < ActiveRecord::Base
   validates :price, presence: true
   validates :avatar, presence: true
 
-  has_attached_file :avatar
+  has_attached_file :avatar,
     :storage => :dropbox,
     :dropbox_credentials => { app_key: ENV['APP_KEY'],
                               app_secret: ENV['APP_SECRET'],

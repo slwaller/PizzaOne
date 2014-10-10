@@ -8,7 +8,7 @@
           - if can? :update, @company
             = link_to "Edit Restaurant", edit_company_path(@company), class: "btn btn-warning btn-xs"
           - if can? :destroy, @company
-            = link_to "Delete Restaurant", company_path(@company), class: "btn btn-danger btn-xs"
+            = link_to "Delete Restaurant", company_path(@company), class: "btn btn-danger btn-xs", method: :delete
           %br
           %br
         .list-group

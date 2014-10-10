@@ -58,6 +58,7 @@
             = f.text_area :content, :cols => "90", :rows => "5"
             %br
             = f.submit "Submit", class: "btn btn-lg btn-success"
+        = link_to "Back To #{@company.name}", company_path(@company), class: "btn btn-lg btn-success"
   / /.container
   .container
     %hr/

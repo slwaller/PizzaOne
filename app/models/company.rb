@@ -6,7 +6,7 @@ class Company < ActiveRecord::Base
   validates :email, presence: true
   validates :address, presence: true
 
-  has_attached_file :avatar
+  has_attached_file :avatar,
     :storage => :dropbox,
     :dropbox_credentials => { app_key: ENV['APP_KEY'],
                               app_secret: ENV['APP_SECRET'],
