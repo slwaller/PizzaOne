@@ -14,6 +14,7 @@
  *= require business-frontpage
  *= require shop-homepage
  *= require shop-item
+ *= require modern-business
  *= require heroic-features
  *= require gritter
  *= require_tree .
@@ -25,7 +26,7 @@
   padding: 0px;
 
  }
- 
+
 .alert{
   font-size: 34px;
   font-weight: bold;
