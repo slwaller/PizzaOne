@@ -20,6 +20,12 @@
  *= require_self
  */
 
+
+ body{
+  padding: 0px;
+
+ }
+ 
 .alert{
   font-size: 34px;
   font-weight: bold;
